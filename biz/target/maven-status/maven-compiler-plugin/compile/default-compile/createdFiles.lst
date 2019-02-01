@@ -1,7 +1,0 @@
-com/hello/dal/book/BookRepository.class
-com/hello/model/dto/BookInfoRespDTO.class
-com/hello/dal/book/BookMapper.class
-com/hello/biz/service/impl/BookInfoServiceImpl.class
-com/hello/biz/service/BookInfoService.class
-com/hello/util/DateUtil.class
-com/hello/model/entity/Book.class
