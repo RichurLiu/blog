@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p th:text="'book list'"></p>
+<div>
+    <!--/*@thymesVar id="bookList" type="list"*/-->
+    <p th:each="book : ${bookList}">
+        <label scope="row" th:text="${book.isbn}"></label>
+        <!--<td><a th:href="@{/users/update/{userId}(userId=${user.id})}" th:text="${user.name}"></a></td>-->
+        <!--/*@thymesVar id="book" type="com.hello.model.dto.BookInfoRespDTO"*/-->
+        <label th:text="${book.title}"></label>
+        <label th:text="${book.author}"></label>
+    </p>
+</div>
+</body>
+</html>
