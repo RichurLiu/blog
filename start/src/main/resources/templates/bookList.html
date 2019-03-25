@@ -7,14 +7,24 @@
 <body>
 <p th:text="'book list'"></p>
 <div>
-    <!--/*@thymesVar id="bookList" type="list"*/-->
-    <p th:each="book : ${bookList}">
-        <label scope="row" th:text="${book.isbn}"></label>
-        <!--<td><a th:href="@{/users/update/{userId}(userId=${user.id})}" th:text="${user.name}"></a></td>-->
-        <!--/*@thymesVar id="book" type="com.hello.model.dto.BookInfoRespDTO"*/-->
-        <label th:text="${book.title}"></label>
-        <label th:text="${book.author}"></label>
-    </p>
+    <table>
+        <thead>
+        <tr>
+            <th>ISBN</th>
+            <th>书名</th>
+            <th>作者</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--/*@thymesVar id="bookList" type="list"*/-->
+        <tr th:each="book : ${bookList}">
+            <!--/*@thymesVar id="book" type="com.hello.model.dto.BookInfoRespDTO"*/-->
+            <td th:text="${book.isbn}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

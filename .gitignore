@@ -1,6 +1,5 @@
 
 ### Eclipse template
-AppPivotEHRService.ipr
 .metadata
 bin/
 tmp/
@@ -136,6 +135,7 @@ crashlytics-build.properties
 fabric.properties
 
 # Editor-based Rest Client
+.idea
 .idea/httpRequests
 ### Maven template
 target/
