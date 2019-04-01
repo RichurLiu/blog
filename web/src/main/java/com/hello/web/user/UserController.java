@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -20,14 +21,19 @@ public class UserController {
         String userName = user.getUserName();
         String password = user.getPassword();
         LOGGER.info("username:{},password:{}",userName,password);
-        return "bike";
+        if(!StringUtils.isEmpty(userName) && !StringUtils.isEmpty(password)){
+            if(userName.equals("richur") && password.equals("123456")){
+                return "bookList";
+            }
+        }
+        return "error";
     }
     @GetMapping("/login")
     public String login(ModelMap map){
         map.put("username", "入门案例");
         User user = new User();
-        user.setPassword("test_ps");
-        user.setUserName("test");
+        user.setUserName("账号");
+        user.setPassword("密码");
         map.put("userInfo", user);
         return "login";
     }
