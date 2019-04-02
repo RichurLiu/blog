@@ -1,6 +1,7 @@
 package com.hello.biz.service;
 
 import com.hello.model.dto.BookInfoRespDTO;
+import com.hello.model.entity.Book;
 
 import java.util.List;
 
@@ -10,4 +11,8 @@ import java.util.List;
  */
 public interface BookInfoService {
     List<BookInfoRespDTO> getAllBook();
+
+    List<BookInfoRespDTO> getBookByDate();
+
+    List<Book> getBooks();
 }

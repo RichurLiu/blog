@@ -1,8 +1,10 @@
 package com.hello.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @Author: liu lei
@@ -16,4 +18,6 @@ public class BookInfoRespDTO implements Serializable {
     private String author;
     private String description;
     private String cover;
+    @JsonFormat(pattern="yyyy-MM-dd  HH:mm:ss" ,  timezone="GMT+8")
+    private Date publishDate;
 }
