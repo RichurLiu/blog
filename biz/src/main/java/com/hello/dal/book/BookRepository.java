@@ -4,6 +4,7 @@ import com.hello.model.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -22,10 +23,11 @@ public class BookRepository {
     }
 
     public List<Book> getBookByDate(Date startDate, Date endDate){
-        return bookMapper.getBookByDate(startDate, endDate);
+//        return bookMapper.getBookByDate(startDate, endDate);
+        return null;
     }
 
-    public List<Book> getBooks(Date startDate, Date endDate){
+    public List<Book> getBooks(LocalDate startDate, LocalDate endDate){
         return bookMapper.getBookByDate(startDate, endDate);
     }
 }

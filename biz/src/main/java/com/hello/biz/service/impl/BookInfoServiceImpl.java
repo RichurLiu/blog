@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.xml.crypto.Data;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -54,15 +55,28 @@ public class BookInfoServiceImpl implements BookInfoService {
 
     @Override
     public List<Book> getBooks() {
-        Date currentTime = new java.sql.Date(new Date().getTime());
-        System.out.println(currentTime);
-        Date startDate = DateUtil.getDaysLater(currentTime, -5);
-        Date endDate = DateUtil.getDaysLater(currentTime, 0);
-        System.out.println(startDate);
-        System.out.println(endDate);
+        //Date currentTime = new Date();
+        //System.out.println(currentTime);
+        //Date startDate = DateUtil.getDaysLater(currentTime, -6);
+        //Date endDate = DateUtil.getDaysLater(currentTime, 1);
+
+        //Date start = DateUtil.dateToShort(startDate);
+        // end = DateUtil.dateToShort(endDate);
+
+        LocalDate currentDate = LocalDate.now();
+        LocalDate startDate = currentDate.minusDays(6);
+        LocalDate endDate = currentDate.plusDays(6);
+//        System.out.println(startDate);
+//        System.out.println(endDate);
+//        System.out.println(start);
+//        System.out.println(end);
         List<Book> books = bookRepository.getBooks(startDate, endDate);
         for (Book book : books) {
+
             System.out.println(book.getPublishDate());
+            System.out.println(book.getCreateTime());
+            System.out.println(book.getUpdateTime());
+            System.out.println("=============================");
         }
 
         return books;

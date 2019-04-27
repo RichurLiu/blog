@@ -4,6 +4,7 @@ import com.hello.model.entity.Book;
 import org.springframework.stereotype.Component;
 import org.apache.ibatis.annotations.Param;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -15,5 +16,5 @@ import java.util.List;
 public interface BookMapper {
     List<Book> getAllBook();
 
-    List<Book> getBookByDate(@Param("startDate")Date startDate, @Param("endDate")Date endDate);
+    List<Book> getBookByDate(@Param("startDate")LocalDate startDate, @Param("endDate")LocalDate endDate);
 }
