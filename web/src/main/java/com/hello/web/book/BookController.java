@@ -17,7 +17,7 @@ import java.util.List;
  * @Author: liu lei
  * @Date: 2019/2/1
  */
-@RestController
+@Controller
 @Log4j2
 public class BookController {
 
